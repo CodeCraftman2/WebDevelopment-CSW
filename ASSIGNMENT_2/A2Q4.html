@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+    <style>
+        #container {
+            text-align: center;}
+        #special-div {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;}
+        .image-container:hover {
+            color: red; }
+        .color-change {
+            color: red; }
+        .image {
+            transition: filter 0.3s;
+            width: 200px;
+            height: 100px; }
+        .grayscale {
+            filter: grayscale(100%);}
+        .image-container:hover .image {
+            filter: none; }
+    </style>
+</head>
+<body>
+    <div id="container" class="image-container">
+        <div id="special-div">My Special Div</div>
+        <img id="image1" class="image" src="cute-kitten-clouds_23-2150752838.webp" alt="Image 1">
+        <img id="image2" class="image" src="view-adorable-looking-kitten_23-2150886230.webp" alt="Image 2">
+    </div> 
+    <script>
+        const div = document.getElementById("special-div");
+        const imageContainer = document.querySelector(".image-container");
+        const image1 = document.getElementById("image1");
+        const image2 = document.getElementById("image2");
+        imageContainer.addEventListener("click", ()=>{
+            div.classList.toggle("color-change");
+            image1.classList.toggle("grayscale");
+            image2.classList.toggle("grayscale");
+        });
+    </script>
+</body>
+</html>

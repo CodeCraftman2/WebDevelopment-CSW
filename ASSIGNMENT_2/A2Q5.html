@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: lightslategray;
+            overflow-y: auto;
+        }
+
+        .menu-bar-left {
+            left: 0;
+        }
+
+        .menu-bar-right {
+            right: 0;
+        }
+
+        .menu-heading {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: salmon;
+            text-decoration: underline;
+        }
+        li a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar menu-bar-left">
+        <h2 class="menu-heading">Menu Bar</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Tutorial</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+<style>
+    
+  #styled-text {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  .bullet {
+    list-style: disc;
+    margin-left: 20px;
+  }
+</style>
+</head>
+<body>
+<label for="color-dropdown">Text Color:</label>
+<select id="color-dropdown">
+  <option value="black">Black</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+</select>
+<label for="size-dropdown">Text Size:</label>
+<select id="size-dropdown">
+  <option value="16px">Small</option>
+  <option value="18px">Medium</option>
+  <option value="24px">Large</option>
+</select>
+<label for="style-dropdown">Text Style:</label>
+<select id="style-dropdown">
+  <option value="normal">Normal</option>
+  <option value="italic">Italic</option>
+  <option value="bold">Bold</option>
+</select>
+<label for="decoration-dropdown">Text Decoration:</label>
+<select id="decoration-dropdown">
+  <option value="none">None</option>
+  <option value="underline">Underline</option>
+</select>
+<label for="bullet-dropdown">Bullet List:</label>
+<select id="bullet-dropdown">
+  <option value="none">None</option>
+  <option value="bullet" class="bullet">Bullet</option>
+</select>
+<label for="font-dropdown">Font Family:</label>
+<select id="font-dropdown">
+  <option value="Arial, sans-serif">Arial</option>
+  <option value="Times New Roman, serif">Times New Roman</option>
+  <option value="Courier New, monospace">Courier New</option>
+</select>
+<div id="styled-text">
+  Siksha 'O Anusandhan University
+</div>
+<script>
+function applyStyles() {
+  var textColor = document.getElementById('color-dropdown').value;
+  var textSize = document.getElementById('size-dropdown').value;
+  var textStyle = document.getElementById('style-dropdown').value;
+  var textDecoration = document.getElementById('decoration-dropdown').value;
+  var bulletStyle = document.getElementById('bullet-dropdown').value;
+  var fontFamily = document.getElementById('font-dropdown').value;
+  var styledText = document.getElementById('styled-text');
+  styledText.style.color = textColor;
+  styledText.style.fontSize = textSize;
+  styledText.style.fontStyle = textStyle;
+  styledText.style.textDecoration = textDecoration;
+  styledText.style.listStyleType = bulletStyle;
+  styledText.style.fontFamily = fontFamily;
+}
+document.getElementById('color-dropdown').addEventListener('change', applyStyles);
+document.getElementById('size-dropdown').addEventListener('change', applyStyles);
+document.getElementById('style-dropdown').addEventListener('change', applyStyles);
+document.getElementById('decoration-dropdown').addEventListener('change', applyStyles);
+document.getElementById('bullet-dropdown').addEventListener('change', applyStyles);
+document.getElementById('font-dropdown').addEventListener('change', applyStyles);
+applyStyles();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!--Question 6. Create a page which contains a table and add button which will add
+rows to this table. Change color of a text on button click. Add a text box and a
+button. Write code to remove all the elements which ID matches with the text
+entered in the text box upon clicking on the button.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Manipulation</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    button {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Table</h2>
+
+<!-- Table -->
+<table id="myTable">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Jane</td>
+  </tr>
+</table>
+
+<!-- Button to add rows -->
+<button onclick="addRow()">Add Row</button>
+
+<!-- Text box and button to remove elements by ID -->
+<input type="text" id="removeId" placeholder="Enter ID to Remove">
+<button onclick="removeById()">Remove by ID</button>
+
+<script>
+  // Function to add a row to the table
+  function addRow() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(table.rows.length);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = table.rows.length;
+    cell2.innerHTML = "New Row";
+  }
+
+  // Function to remove elements by ID
+  function removeById() {
+    var idToRemove = $("#removeId").val();
+    $("#" + idToRemove).remove();
+  }
+</script>
+
+</body>
+</html>

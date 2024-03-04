@@ -1,0 +1,33 @@
+<!--Question 2. Attach a click and double-click event to the <p> element.
+    <body>
+    <p>Click me!</p>
+    </body>
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click and Double-Click Events</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<p id="clickMe">Click me!</p>
+
+<script>
+  $(document).ready(function() {
+    // Click event
+    $("#clickMe").on("click", function() {
+      alert("You clicked me!");
+    });
+
+    // Double-click event
+    $("#clickMe").on("dblclick", function() {
+      alert("You double-clicked me!");
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--Question 4. Show a popup box without using JavaScript alert.-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Popup</title>
+  <style>
+    /* Styles for the overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styles for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Trigger button to show the popup -->
+<button onclick="showPopup()">Show Popup</button>
+
+<!-- Overlay and Modal elements -->
+<div class="overlay" id="overlay"></div>
+<div class="modal" id="modal">
+  <p>This is a custom popup!</p>
+  <button onclick="hidePopup()">Close</button>
+</div>
+
+<script>
+  // Function to show the popup
+  function showPopup() {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+  }
+
+  // Function to hide the popup
+  function hidePopup() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

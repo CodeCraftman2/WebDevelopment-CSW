@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-button {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: lightslategray;
+            cursor: pointer;
+            text-align: center;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            margin: 3px auto;
+        }
+
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100%;
+            background-color: darkgray;
+            overflow-y: auto;
+            transition: left 0.8s;
+        }
+
+        .show-menu {
+            left: 0;
+        }
+
+        .menu-heading {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: sienna;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-button" id="menu-button">
+        <div class="menu-icon"></div>
+    </div>
+    <div class="menu-bar" id="menu-bar">
+        <h2 class="menu-heading">Menu-Bar</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const menuBar = document.getElementById("menu-bar");
+        
+        menuButton.addEventListener("click", ()=>{
+            menuBar.classList.toggle("show-menu");
+        });
+    </script>
+</body>
+</html>

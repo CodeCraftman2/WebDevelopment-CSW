@@ -1,0 +1,332 @@
+<!--Question 8. Create a front end page which performs Job listings with filtering. Include data of
+at least 20 Job categories, 100 jobs.
+In this challenge, you will need to filter the job listings by the categories selected. You can use
+HTML, CSS, Java Script (JQuery).
+Hint: Use JavaScript to filter items in the DOM. This is a key skill when building client-side
+applications.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Job Listings</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+      background-color: hsl(180, 52%, 96%);
+    }
+
+    header {
+      background-color: hsl(180, 29%, 50%);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .job-listings {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .job-card {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+
+    select {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 20px;
+      color: hsl(180, 29%, 50%);
+    }
+
+    .attribution a {
+      color: hsl(180, 29%, 50%);
+    }
+  </style>
+
+  <!-- External Styles (for responsive design) -->
+  <style>
+    @media (max-width: 375px) {
+      /* Mobile styles go here */
+    }
+
+    @media (min-width: 376px) and (max-width: 1440px) {
+      /* Tablet and Desktop styles go here */
+    }
+
+    @media (min-width: 1441px) {
+      /* Large Desktop styles go here */
+    }
+  </style>
+</head>
+<body>
+     <!-- Item Start -->
+  Photosnap
+  New!
+  Featured
+  Senior Frontend Developer
+  1d ago
+  Full Time
+  USA only
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Senior
+  <!-- Languages -->
+  HTML
+  CSS
+  JavaScript
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Manage
+  New!
+  Featured
+  Fullstack Developer
+  1d ago
+  Part Time
+  Remote
+  <!-- Role -->
+  Fullstack
+  <!-- Level -->
+  Midweight
+  <!-- Languages -->
+  Python
+  <!-- Tools -->
+  React
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Account
+  New!
+  Junior Frontend Developer
+  2d ago
+  Part Time
+  USA only
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  JavaScript
+  <!-- Tools -->
+  React
+  Sass
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  MyHome
+  Junior Frontend Developer
+  5d ago
+  Contract
+  USA only
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  CSS
+  JavaScript
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Loop Studios
+  Software Engineer
+  1w ago
+  Full Time
+  Worldwide
+  <!-- Role -->
+  Fullstack
+  <!-- Level -->
+  Midweight
+  <!-- Languages -->
+  JavaScript
+  Ruby
+  <!-- Tools -->
+  Sass
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  FaceIt
+  Junior Backend Developer
+  2w ago
+  Full Time
+  UK only
+  <!-- Role -->
+  Backend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  Ruby
+  <!-- Tools -->
+  RoR
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Shortly
+  Junior Developer
+  2w ago
+  Full Time
+  Worldwide
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  HTML
+  JavaScript
+  <!-- Tools -->
+  Sass
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Insure
+  Junior Frontend Developer
+  2w ago
+  Full Time
+  USA only
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  JavaScript
+  <!-- Tools -->
+  Vue
+  Sass
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  Eyecam Co.
+  Full Stack Engineer
+  3w ago
+  Full Time
+  Worldwide
+  <!-- Role -->
+  Fullstack
+  <!-- Level -->
+  Midweight
+  <!-- Languages -->
+  JavaScript
+  Python
+  <!-- Tools -->
+  Django
+  <!-- Item End -->
+
+  <!-- Item Start -->
+  The Air Filter Company
+  Front-end Dev
+  1mo ago
+  Part Time
+  Worldwide
+  <!-- Role -->
+  Frontend
+  <!-- Level -->
+  Junior
+  <!-- Languages -->
+  JavaScript
+  <!-- Tools -->
+  React
+  Sass
+  <!-- Item End -->
+
+<header>
+  <h1>Job Listings</h1>
+</header>
+
+<div>
+  <label for="categoryFilter">Filter by Category:</label>
+  <select id="categoryFilter" onchange="filterJobs()">
+    <option value="all">All Categories</option>
+    <option value="category1">Category 1</option>
+    <option value="category2">Category 2</option>
+    <!-- Add more categories as needed -->
+  </select>
+</div>
+
+<div class="job-listings" id="jobListings">
+  <!-- Job listings will be dynamically added here -->
+</div>
+
+<!-- Job data -->
+<script>
+  var jobData = [
+    { title: "Job 1", category: "category1" },
+    { title: "Job 2", category: "category2" },
+    // Add more job data as needed
+  ];
+
+  function initializeJobListings() {
+    var jobListingsContainer = document.getElementById("jobListings");
+    jobListingsContainer.innerHTML = '';
+
+    jobData.forEach(function(job) {
+      var jobCard = document.createElement("div");
+      jobCard.className = "job-card";
+      jobCard.innerHTML = "<h3>" + job.title + "</h3><p>Category: " + job.category + "</p>";
+      jobListingsContainer.appendChild(jobCard);
+    });
+  }
+
+  function filterJobs() {
+    var selectedCategory = document.getElementById("categoryFilter").value;
+
+    if (selectedCategory === "all") {
+      initializeJobListings();
+    } else {
+      var filteredJobs = jobData.filter(function(job) {
+        return job.category === selectedCategory;
+      });
+
+      displayFilteredJobs(filteredJobs);
+    }
+  }
+
+  function displayFilteredJobs(filteredJobs) {
+    var jobListingsContainer = document.getElementById("jobListings");
+    jobListingsContainer.innerHTML = '';
+
+    filteredJobs.forEach(function(job) {
+      var jobCard = document.createElement("div");
+      jobCard.className = "job-card";
+      jobCard.innerHTML = "<h3>" + job.title + "</h3><p>Category: " + job.category + "</p>";
+      jobListingsContainer.appendChild(jobCard);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    initializeJobListings();
+  });
+</script>
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Yagya Saini</a>.
+</div>
+
+</body>
+</html>
+
+

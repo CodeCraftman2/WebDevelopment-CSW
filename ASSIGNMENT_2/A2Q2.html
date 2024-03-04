@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+    <style>
+        .table-container {
+            display: table;
+            width: 100%;
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            display: table-cell;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        .value {
+            font-weight: normal;
+        }
+
+        .table-container .row:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        
+        .name-row {
+            display: table-row;
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+        }
+        
+        .name-cell {
+            display: table-cell;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <div class="name-row">
+            <div class="name-cell">Name:</div>
+            <div class="name-cell">Roll Number:</div>
+            <div class="name-cell">CSW Marks:</div>
+        </div>
+        <div class="row">
+            <div class="cell">Srishti</div>
+            <div class="cell">2241011231</div>
+            <div class="cell">100</div>
+        </div>
+        <div class="row">
+            <div class="cell">Suchita</div>
+            <div class="cell">224101892</div>
+            <div class="cell">91</div>
+        </div>
+        <div class="row">
+            <div class="cell">Bharavi</div>
+            <div class="cell">224101456</div>
+            <div class="cell">88</div>
+        </div>
+    </div>
+</body>
+</html>

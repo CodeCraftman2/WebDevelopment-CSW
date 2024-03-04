@@ -1,0 +1,114 @@
+<!--Question 5. Create an HTML page which uses the following methods, (i)
+slideDown(), (ii) animate(), (iii) fadeIn(), (iv) hide(), (v) show(), (vi) mouseenter(),
+(vii) dblclick(), (viii) mouseleave(), (ix) attr(), and (x) html().-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Methods Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide Down -->
+<button onclick="slideDownExample()">Slide Down</button>
+
+<!-- Animate -->
+<button onclick="animateExample()">Animate</button>
+
+<!-- Fade In -->
+<button onclick="fadeInExample()">Fade In</button>
+
+<!-- Hide -->
+<button onclick="hideExample()">Hide</button>
+
+<!-- Show -->
+<button onclick="showExample()">Show</button>
+
+<!-- Mouse Enter -->
+<div id="box" onmouseenter="mouseEnterExample()">Mouse Enter</div>
+
+<!-- Double Click -->
+<div id="doubleClickBox" ondblclick="doubleClickExample()">Double Click Me</div>
+
+<!-- Mouse Leave -->
+<div id="mouseLeaveBox" onmouseleave="mouseLeaveExample()">Mouse Leave</div>
+
+<!-- Attr -->
+<button onclick="attrExample()">Change Attribute</button>
+
+<!-- Html -->
+<button onclick="htmlExample()">Change HTML</button>
+
+<script>
+  // Slide Down
+  function slideDownExample() {
+    $("#box").slideDown();
+  }
+
+  // Animate
+  function animateExample() {
+    $("#box").animate({
+      width: "400px",
+      height: "400px",
+    }, 1000);
+  }
+
+  // Fade In
+  function fadeInExample() {
+    $("#box").fadeIn();
+  }
+
+  // Hide
+  function hideExample() {
+    $("#box").hide();
+  }
+
+  // Show
+  function showExample() {
+    $("#box").show();
+  }
+
+  // Mouse Enter
+  function mouseEnterExample() {
+    alert("Mouse entered the box!");
+  }
+
+  // Double Click
+  function doubleClickExample() {
+    alert("Double clicked the box!");
+  }
+
+  // Mouse Leave
+  function mouseLeaveExample() {
+    alert("Mouse left the box!");
+  }
+
+  // Attr
+  function attrExample() {
+    $("#doubleClickBox").attr("style", "background-color: lightgreen;");
+  }
+
+  // Html
+  function htmlExample() {
+    $("#mouseLeaveBox").html("Content changed!");
+  }
+</script>
+
+</body>
+</html>
+
+
+

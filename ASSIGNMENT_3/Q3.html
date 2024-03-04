@@ -1,0 +1,34 @@
+<!--Attach a function to the blur event. The blur event occurs when the
+following <input> Field1 loses focus.
+<body> <form>
+<input id="field1" type="text" value="Field 1">
+<input id="field2" type="text" value="Field 2">
+</form>
+</body>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blur Event Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<form>
+  <input id="field1" type="text" value="Field 1">
+  <input id="field2" type="text" value="Field 2">
+</form>
+
+<script>
+  $(document).ready(function() {
+    // Attach function to the blur event of the input field with ID "field1"
+    $("#field1").on("blur", function() {
+      alert("Field 1 lost focus!");
+      // You can perform additional actions or call a function here
+    });
+  });
+</script>
+
+</body>
+</html>
